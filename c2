@@ -1,0 +1,11 @@
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+
+reverseString("hello");
+
+//The '.reverse()' method only works on arrays
+//You need to convert the string to an array of letters using the '.split()' method
+//Then you can reverse the array
+//Finally you use '.join()' to convert the array of letters into a string
+//The ("") argument passed to Split and Join is the point of separation (between letters), and how to rejoin them (no spaces)
