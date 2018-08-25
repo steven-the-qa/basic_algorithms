@@ -1,0 +1,16 @@
+function findLongestWordLength(str) {
+  let arr = str.split(' ');
+  let resultArr = [];
+  for (let i in arr) {
+    resultArr.push(arr[i].length);
+  }
+  return resultArr.sort((a,b) => {
+  return a-b
+  }).pop();
+}
+findLongestWordLength("The quick brown fox jumped over the lazy dog");
+
+//First I split the string into an array of words by separating at the space characters
+//Then I made a result array that will hold the length properties of all the strings in the str.split() array
+//Then I sort that array's numbers using a function that orders from least to greatest
+//Then I pop off the last number in the array because if the sorting method worked properly, the final number will be the longest length
