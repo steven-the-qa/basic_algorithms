@@ -1,0 +1,32 @@
+function confirmEnding(str, target) {
+  // "Never give up and good luck will find you."
+  // -- Falcor
+let targetArr = target.split("").reverse();
+let stringArr = str.split("").reverse();
+let resultArr = [];
+for (let i = 0; i < targetArr.length; i++){
+  if (stringArr[i] == targetArr[i]){
+   resultArr.push(targetArr[i]);
+  }
+}
+if (resultArr.reverse().join("") == target){
+  return true
+}
+return false
+}
+confirmEnding("Bastian", "n");
+
+//My first step was to figure out how I was going to compare the target string to the ending of the 'str' string
+//I realized that if I spelled both strings backwards, they would both look identical at the beginning if there was a match
+/* An example to illustrate this is below:
+str = 'sandwich';
+target = 'wich';
+REVERSED
+'hciwdnas'
+'hciw'
+AS ARRAYS
+['h','c','i','w','d','n','a','s']
+['h','c','i','w']
+*/
+//I realized an easy way to check for a match was to convert the strings to arrays and reverse them
+//After that, it was just a matter of a simple for loop to check the 'str' array from the beginning up to the target string's length
