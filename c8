@@ -1,0 +1,20 @@
+function truncateString(str, num) {
+  // Clear out that junk in your trunk
+  let arr = str.split("");
+  if (num >= str.length){
+    return str
+  }
+  else if (str.length > num){
+    arr.splice(num, arr.length-num, '...');
+    return arr.join("");
+  }
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", 8);
+
+//First I split the string into an array so I could use Splice
+//Then I validated input to make sure the 'num' wasn't the same length or greater than the string
+//Then I focused on the values pertinent to the function, namely the strings that I wanted to truncate
+//I used 'num' as the index to start cutting off elements in Argument 1
+//Then I used the difference of the string's length and the 'num' to determine the number of remaining elements to cut for Argument 2
+//Then I added '...' in place of those elements in Argument 3
