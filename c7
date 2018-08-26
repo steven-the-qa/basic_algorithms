@@ -1,0 +1,18 @@
+function repeatStringNumTimes(str, num) {
+  // repeat after me
+  if (num <= 0) {
+   return ""
+  }
+  let result = "";
+  for (let i = num; i > 0; i--){
+    result += str;
+  }
+  return result
+}
+
+repeatStringNumTimes("abc", 3);
+
+//First I did my input validation to make sure the 'num' wasn't zero or fewer repetitions
+//Then I created an empty string
+//That empty string was to be added a copy of 'str' until the counter, specified by 'num', reached 0
+//It's a lot like the photocopier function we made in a previous section of the certification using the spread operator
