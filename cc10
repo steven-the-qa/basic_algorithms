@@ -1,0 +1,12 @@
+function booWho(bool) {
+  // What is the new fad diet for ghost developers? The Boolean.
+  if (typeof bool === 'boolean') {
+    return true
+  }
+  return false
+}
+
+booWho(null);
+
+//This is an example of using 'typeof' to find out the data type
+//It's a simple if statement that checks for booleans and returns true if the passed value to 'bool' is a boolean
