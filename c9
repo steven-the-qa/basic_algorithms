@@ -1,0 +1,16 @@
+function findElement(arr, func) {
+  let num = 0;
+  for (let i = 0; i < arr.length; i++){
+    num = arr[i];
+    if (func(num)){
+      return num
+    }
+    }
+}
+
+findElement([1, 2, 3, 4], num => num % 2 === 0);
+
+//The function is supposed to return the first value in the array to pass the 'truth test' established by 'func'
+//I iterate through the array's items and assign the value of 'num' to the current item at the beginning of each loop iteration
+//I pass that value of 'num' to the 'func' function and see if it returns true
+//If it returns true, I return that value of 'num'
