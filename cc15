@@ -1,0 +1,22 @@
+function mutation(arr) {
+  let temp1 = arr[0].toLowerCase().split("");
+  let temp2 = arr[1].toLowerCase().split("");
+
+  for (let i = 0; i < temp2.length; i++){
+      if (temp1.indexOf(temp2[i]) === -1){
+        return false
+      }
+}
+return true
+}
+
+mutation(["hello", "hey"]);
+
+//'arr' has 2 strings
+//The function's purpose is to check if the 2nd string's letters are in the 1st string, too, even if they're out of order or a different case
+
+//First I convert the strings to lowercase and split them into arrays of letters
+//This gets rid of the 'different case' issue and lets me check for individual letters
+//Then I use a for loop with '.indexOf()' to check the 1st letter array for the existence of each of the 2nd string array's letters
+//If there are any letters that don't appear, I return false right away
+//As a catch-all for any 'string 2's that pass that test, I return true after the loop ends
