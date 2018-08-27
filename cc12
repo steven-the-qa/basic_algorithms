@@ -1,0 +1,29 @@
+function frankenSplice(arr1, arr2, n) {
+  // It's alive. It's alive!
+  let resultArr = arr2.slice(0,arr2.length);
+  for (let i = 0; i < arr1.length; i++){
+    resultArr.splice(n+i,0,arr1[i]);
+  }
+  return resultArr
+}
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+//This function's purpose is to transfer the contents in order from 'arr1' to 'arr2' at specified index 'n'
+//This function only works if you save a COPY of 'arr2' to a variable
+//Saving the original 'arr2' ends up modifying 'arr2' and the challenge says modifying either array is not allowed
+//Modifying the COPY is allowed
+
+/*My step-by-step is as follows:
+1) Save a copy of 'arr2' to the variable 'resultArr'
+2) Iterate through 'arr1', sending the items 1 by 1 over to 'resultArr' at index 'n'
+a) Notice that you must add 1 to index 'n' after each iteration to keep the values in order
+b) Keeping the index at 'n' for every iteration results in the values transferring in reverse order
+c) The reason for this is illustrated below:
+
+[value0, value1, value2] //Before iterations, 'n' will remain '1'
+
+[value0, newValue0, value1, value2] //After first iteration
+
+[value0, newValue1, newValue0, value1, value2] //After 2nd iteration...the values were both inserted at index '1'
+
+3) Return the variable 'resultArr'
