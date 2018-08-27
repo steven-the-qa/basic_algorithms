@@ -1,0 +1,12 @@
+function bouncer(arr) {
+  // Don't show a false ID to this bouncer.
+  return arr.filter((q) => {
+    return q
+  })
+}
+
+bouncer([7, "ate", "", false, 9]);
+
+//All I did here was use the '.filter()' method to iterate through 'arr'
+//The method looked for 'truthy' values and returned a new array with them in it
+//I returned that 'truthy' array
