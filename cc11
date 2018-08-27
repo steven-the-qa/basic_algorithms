@@ -1,0 +1,55 @@
+function titleCase(str) {
+  let wordArr = str.split(" ");
+  for (let i = 0; i < wordArr.length; i++){
+    wordArr[i] = wordArr[i].toLowerCase();
+    let firstLetter = wordArr[i].charAt(0);
+    let letterArr = wordArr[i].split("");
+    letterArr.shift();
+    letterArr.unshift(firstLetter.toUpperCase());
+    wordArr[i] = letterArr.join("");
+  }
+return wordArr.join(" ");
+}
+
+titleCase("I'm a little tea pot");
+
+/*
+(5) ["I'm", "a", "little", "tea", "pot"]
+0
+:
+"I'm"
+1
+:
+"a"
+2
+:
+"little"
+3
+:
+"tea"
+4
+:
+"pot"
+length
+:
+5
+*/
+
+//The multi-line comment at the bottom is the Chrome browser console output for 'wordArr' after the first line of the program
+//My initial attempt at this algorithm didn't involve using the browser console, and for that reason, I couldn't figure out why my algorithm failed
+//I figured out that some array methods I used to alter the string in array format weren't actually saving the changes
+//Some of these methods needed me to save them to a variable for later use because they didn't actually modify the array they were called on
+//Items like 'firstLetter' and 'letterArr' were ways I remedied this idiosyncrasy
+
+/*In the end, my algorithm could be described as follows:
+1) Split string into array of words
+2) Loop through the words, and for each one:
+
+a) Convert whole word to lowercase first
+b) Save the first letter to a variable
+c) Split the word into an array of letters and save array to a variable
+d) Cut off the first letter of the letter array
+e) Convert the first letter variable to uppercase and add it to the beginning of the word's letter array
+f) Join the word's array of letters back into a string and save it as the new current item, 'wordArr[i]'
+
+3) Join the array of words back into a string and return it as the result
