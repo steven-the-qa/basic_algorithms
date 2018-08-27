@@ -1,0 +1,29 @@
+function getIndexToIns(arr, num) {
+  // Find my place in this sorted array.
+  for (let i = 0; i < arr.length; i++){
+    arr.sort((a,b,) => {
+      return a-b
+    });
+    
+    if (num <= arr[0]){
+      return 0
+    }
+    if (num > arr[arr.length-1]){
+      return arr.length
+    }
+    if (num >= arr[i] && num <= arr[i+1]){
+      return i+1
+    }
+  }
+  return 0
+}
+
+getIndexToIns([], 1);
+
+//This function's purpose is to figure out where a given number fits into an array of numbers once it's sorted from least to greatest
+//Before anything else, I sort the array
+//My algorithm first checks to see if the number is less than the array's first value, and returns 0 if so
+//Then it checks if the number is greater than the array's last value, and returns the last index of the array if so
+//Lastly, it check if the number is greater than or equal to the current value in the iteration, and less than the next one
+//If so, it returns the index of the next value
+//As a catch-all for any empty arrays or strange use cases, I return 0 
