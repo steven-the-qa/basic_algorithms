@@ -1,0 +1,19 @@
+function chunkArrayInGroups(arr, size) {
+  // Break it up.
+  let result = [];
+  for (let i = 0; i < arr.length; i+=size){
+      result.push(arr.slice(i, i+size));
+  }
+  return result
+}
+
+console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
+
+//This function's purpose is to chunk the array into smaller arrays the size of 'size' and fit them into a larger array of arrays
+//The first step to creating this multi-dimensional array is creating an array variable to store the smaller arrays in
+//The next step is to create a for loop to loop through the array 'arr'
+//The loop counter increases by 'size' each iteration 
+//The '.slice()' method returns small arrays with the values between 'i' and 'i+size' in 'arr'
+//This makes sure the slice of the array is 'size' elements big, and in order
+//The small array gets pushed to the 'result' array
+//The 'result' array is returned!
