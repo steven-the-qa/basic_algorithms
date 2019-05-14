@@ -14,3 +14,20 @@ findLongestWordLength("The quick brown fox jumped over the lazy dog");
 //Then I made a result array that will hold the length properties of all the strings in the str.split() array
 //Then I sort that array's numbers using a function that orders from least to greatest
 //Then I pop off the last number in the array because if the sorting method worked properly, the final number will be the longest length
+
+
+----------------------
+
+Advanced Solution:
+
+function findLongestWordLength(str) {
+  let words = str.slice(0).split(' ')
+  return words.reduce((a,b) => {
+    return b.length > a.length ? b : a
+  }).length
+}
+
+//I apply functional programming principles by using slice() so I don't alter the parameter's original value.
+//I use the reduce() method to more efficiently return a single value from an array
+//I use the ternary operator to reduce my return statement to 1 line of code
+//I add the length property on at the end so I'm able to avoid using a variable to store the word before returning its length inside function scope
