@@ -15,3 +15,16 @@ factorialize(5);
 
 //I used a shortuct by taking 'num=0' out of the algorithm with a simple 'if' statement
 //After that, I just looped through all the numbers south of the given number until they hit 1, multiplying 'num' by all of them 
+
+---------------
+Advanced Solution:
+
+function factorialize(num) {
+  let factorialized = 1
+  for (let i = num; i > 0; i--){
+    factorialized *= i
+  }
+  return num === 1 ? 1 : factorialized
+}
+
+//Reduced lines of code by using the ternary operator to return the appropriate number depending on the parameter's initial value
