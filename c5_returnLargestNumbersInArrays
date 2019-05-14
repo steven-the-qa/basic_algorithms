@@ -19,3 +19,19 @@ largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 85
 //My first step was to sort all the arrays from least to greatest, and push them to the sorted array
 //Then I needed to iterate through the newly sorted arrays and pop off the last number, just like in the previous problem
 //Those numbers were saved in the result array and returned
+
+--------------------
+Advanced Solution:
+
+function largestOfFour(arr) {
+  // You can do this!
+  let copy = arr.slice(0)
+ return copy.map((sub) => {
+    return sub.reduce((a,b) => {
+      return b > a ? b : a
+    })
+  })
+}
+
+//Used only higher-order methods to finish this challenge, no for loops
+//Used ternary operator to shorten the return statement
