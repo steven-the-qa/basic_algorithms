@@ -6,3 +6,12 @@ function convertToF(celsius) {
 convertToF(30);
 
 //This is a simple Celsius-to-Fahrenheit conversion
+
+----------------
+Advanced Solution:
+
+function convertToF(celsius) {
+  return celsius * (9/5) + 32
+}
+
+//There doesn't need to be a variable declaration to return a calculation
