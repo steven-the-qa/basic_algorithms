@@ -9,3 +9,18 @@ reverseString("hello");
 //Then you can reverse the array
 //Finally you use '.join()' to convert the array of letters into a string
 //The ("") argument passed to Split and Join is the point of separation (between letters), and how to rejoin them (no spaces)
+
+--------------------
+Advanced Solution:
+
+function reverseString(str) {
+  let copy = str.slice(0).split('')
+  let reversed = []
+  for (let i = copy.length - 1; i >= 0; i--){
+    reversed.push(copy[i])
+  }
+  return reversed.join('')
+}
+
+//This solution shows how the reverse() method works under the hood
+//I avoided mutating the str parameter by using slice()
